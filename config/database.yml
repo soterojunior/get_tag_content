@@ -1,0 +1,20 @@
+default: &default
+  adapter: mysql2
+  username: tag_content_api
+  password: 'T@gC0nT&Nt'
+  encoding: utf8
+  reconnect: true
+  collation: utf8_general_ci
+  host: localhost
+
+development:
+  <<: *default
+  database: tag_content_api_development
+
+test:
+  <<: *default
+  database: tag_content_api_test
+
+production:
+  <<: *default
+  database: tag_content_api

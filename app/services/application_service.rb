@@ -13,8 +13,6 @@ class ApplicationService
         @doc = Nokogiri::HTML(open(page_url).read)
         @title = @doc.at_css("title").text
 
-        p @title
-
         if IndexContent.exists?(url_page: page_url)
           raise ContentError.new("The page #{page_url} has already exists!")
         else
